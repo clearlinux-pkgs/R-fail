@@ -4,13 +4,15 @@
 #
 Name     : R-fail
 Version  : 1.3
-Release  : 8
+Release  : 9
 URL      : https://cran.r-project.org/src/contrib/fail_1.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fail_1.3.tar.gz
 Summary  : File Abstraction Interface Layer (FAIL)
 Group    : Development/Tools
 License  : BSD-3-Clause
+Requires: R-backports
 BuildRequires : R-BBmisc
+BuildRequires : R-backports
 BuildRequires : R-checkmate
 BuildRequires : buildreq-R
 
@@ -25,11 +27,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1537796069
+export SOURCE_DATE_EPOCH=1552770329
 
 %install
+export SOURCE_DATE_EPOCH=1552770329
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1537796069
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -64,8 +66,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library fail|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  fail || :
 
 
 %files
@@ -91,3 +92,13 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/fail/help/paths.rds
 /usr/lib64/R/library/fail/html/00Index.html
 /usr/lib64/R/library/fail/html/R.css
+/usr/lib64/R/library/fail/tests/test_all.R
+/usr/lib64/R/library/fail/tests/testthat/test_apply.R
+/usr/lib64/R/library/fail/tests/testthat/test_as_list.R
+/usr/lib64/R/library/fail/tests/testthat/test_assign.R
+/usr/lib64/R/library/fail/tests/testthat/test_constructor.R
+/usr/lib64/R/library/fail/tests/testthat/test_get_put.R
+/usr/lib64/R/library/fail/tests/testthat/test_mapply.R
+/usr/lib64/R/library/fail/tests/testthat/test_remove.R
+/usr/lib64/R/library/fail/tests/testthat/test_sail.R
+/usr/lib64/R/library/fail/tests/testthat/test_size.R
