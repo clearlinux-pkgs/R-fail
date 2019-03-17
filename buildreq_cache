@@ -1,4 +1,7 @@
 1.3
 R-BBmisc
+R-assertthat
 R-backports
 R-checkmate
+R-cli
+R-withr

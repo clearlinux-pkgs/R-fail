@@ -4,16 +4,21 @@
 #
 Name     : R-fail
 Version  : 1.3
-Release  : 10
+Release  : 11
 URL      : https://cran.r-project.org/src/contrib/fail_1.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fail_1.3.tar.gz
 Summary  : File Abstraction Interface Layer (FAIL)
 Group    : Development/Tools
 License  : BSD-3-Clause
-Requires: R-backports
+Requires: R-assertthat
+Requires: R-cli
+Requires: R-withr
 BuildRequires : R-BBmisc
+BuildRequires : R-assertthat
 BuildRequires : R-backports
 BuildRequires : R-checkmate
+BuildRequires : R-cli
+BuildRequires : R-withr
 BuildRequires : buildreq-R
 
 %description
@@ -27,10 +32,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552770329
+export SOURCE_DATE_EPOCH=1552836464
 
 %install
-export SOURCE_DATE_EPOCH=1552770329
+export SOURCE_DATE_EPOCH=1552836464
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
