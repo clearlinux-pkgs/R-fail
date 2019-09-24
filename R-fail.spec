@@ -4,21 +4,16 @@
 #
 Name     : R-fail
 Version  : 1.3
-Release  : 16
+Release  : 17
 URL      : https://cran.r-project.org/src/contrib/fail_1.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fail_1.3.tar.gz
 Summary  : File Abstraction Interface Layer (FAIL)
 Group    : Development/Tools
 License  : BSD-3-Clause
-Requires: R-assertthat
-Requires: R-cli
-Requires: R-withr
+Requires: R-BBmisc
+Requires: R-checkmate
 BuildRequires : R-BBmisc
-BuildRequires : R-assertthat
-BuildRequires : R-backports
 BuildRequires : R-checkmate
-BuildRequires : R-cli
-BuildRequires : R-withr
 BuildRequires : buildreq-R
 
 %description
@@ -31,13 +26,13 @@ in a key-value fashion.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1552836464
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1569356603
 
 %install
-export SOURCE_DATE_EPOCH=1552836464
+export SOURCE_DATE_EPOCH=1569356603
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -66,12 +61,12 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  fail || :
+R CMD check --no-manual --no-examples --no-codoc fail || :
 
 
 %files
