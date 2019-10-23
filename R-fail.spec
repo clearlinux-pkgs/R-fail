@@ -4,7 +4,7 @@
 #
 Name     : R-fail
 Version  : 1.3
-Release  : 17
+Release  : 18
 URL      : https://cran.r-project.org/src/contrib/fail_1.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fail_1.3.tar.gz
 Summary  : File Abstraction Interface Layer (FAIL)
@@ -15,6 +15,7 @@ Requires: R-checkmate
 BuildRequires : R-BBmisc
 BuildRequires : R-checkmate
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 in a key-value fashion.
@@ -27,10 +28,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1569356603
+export SOURCE_DATE_EPOCH=1571826376
 
 %install
-export SOURCE_DATE_EPOCH=1569356603
+export SOURCE_DATE_EPOCH=1571826376
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
